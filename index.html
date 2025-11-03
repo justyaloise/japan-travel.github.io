@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhianne Gabriel | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #fffbea; /* soft pastel yellow */
+    }
+
+    header {
+      background-color: #f5d76e;
+      color: #3e3e3e;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #3e3e3e;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-color: #fff3b0;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      color: #5a4d00;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #5a4d00;
+      margin: 0;
+    }
+
+    .about {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .about h2 {
+      font-size: 26px;
+      color: #3e3e3e;
+      margin-bottom: 30px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .text-box {
+      background-color: #fffdf3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 700px;
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+
+    .text-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .text-box h3 {
+      margin-top: 0;
+      color: #5a4d00;
+    }
+
+    .text-box p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #fff3b0;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #5a4d00;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      .text-box {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hello, I'm Rhianne Gabriel</h2>
+    <p>3rd Year IT Student | PUP Sto. Tomas Campus</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="text-box">
+        <h3>About Me</h3>
+        <p>
+          I'm Rhianne Gabriel, 20 years of age, currently studying Information Technology. I love creating user-friendly websites and learning new tools to improve my coding and design skills.
+        </p>
+      </div>
+
+      <div class="text-box">
+        <h3>Skills</h3>
+        <p>
+        • HTML, CSS, JavaScript <br>
+        • Basic Python Programming <br>
+        • UI/UX Design (Figma, Canva) <br>
+        • Team Collaboration & Communication <br>
+        • Project Coordination & Time Management <br>
+        • Creative Direction and Problem-Solving
+        </p>
+      </div>
+
+      <div class="text-box">
+        <h3>Education</h3>
+        <p>
+          Bachelor of Science in Information Technology <br>
+          Polytechnic University of the Philippines - Sto. Tomas Campus
+        </p>
+      </div>
+
+      <div class="text-box">
+        <h3>Projects</h3>
+        <p>
+          Tutoring Management System <br>
+          Batangas Travel App Website
+        </p>
+      </div>
+
+      <div class="text-box">
+        <h3>Contact Information</h3>
+        <p>
+          <!-- Replace with your own contact details -->
+          📧 rhiannegabriel2@gmail.com <br>
+          📱 0927 706 5841
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 Rhianne Gabriel | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
+
