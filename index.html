@@ -4,191 +4,428 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rhianne Gabriel | Portfolio</title>
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: "Poppins", sans-serif;
-      background-color: #fffbea; /* soft pastel yellow */
+    }
+
+    body {
+      background: #050505;
+      color: #e8e8e8;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #f5d76e;
-      color: #3e3e3e;
-      padding: 15px 50px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.8);
+      padding: 18px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 0, 50, 0.2);
     }
 
     header h1 {
-      font-size: 18px;
-      margin: 0;
+      font-size: 22px;
+      color: #ff1a3c;
       font-weight: 600;
+      text-shadow: 0 0 10px #ff1a3c;
     }
 
     nav a {
-      color: #3e3e3e;
+      margin-left: 30px;
+      color: #c7c7c7;
       text-decoration: none;
-      margin-left: 20px;
       font-weight: 500;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ff1a3c;
+      text-shadow: 0 0 8px #ff1a3c;
+    }
+
+    section {
+      padding: 120px 10%;
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .hero {
-      background-color: #fff3b0;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .hero h2 {
-      color: #5a4d00;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 16px;
-      color: #5a4d00;
-      margin: 0;
-    }
-
-    .about {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .about h2 {
-      font-size: 26px;
-      color: #3e3e3e;
-      margin-bottom: 30px;
-    }
-
-    .about-content {
       display: flex;
-      flex-direction: column;
+      gap: 70px;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
-    }
-
-    .text-box {
-      background-color: #fffdf3;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 20px;
-      width: 80%;
-      max-width: 700px;
+      flex-direction: row;
       text-align: left;
-      transition: transform 0.2s ease;
     }
 
-    .text-box:hover {
-      transform: translateY(-5px);
+    .hero-left img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 35px #ff1a3c;
+      transition: 0.4s;
     }
 
-    .text-box h3 {
-      margin-top: 0;
-      color: #5a4d00;
+    .hero-left img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px #ff1a3c;
     }
 
-    .text-box p {
-      font-size: 14px;
-      color: #444;
+    .hero-right h4 {
+      color: #ff405f;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      text-shadow: 0 0 10px #ff1a3c;
+    }
+
+    .hero-right h1 {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero-right p {
+      font-size: 18px;
+      max-width: 480px;
+      margin-bottom: 25px;
       line-height: 1.6;
+      color: #d8d8d8;
     }
 
-    footer {
-      background-color: #fff3b0;
+    .cta {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #ff1a3c;
+      color: white;
+      box-shadow: 0 0 15px #ff1a3c;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 30px #ff1a3c;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid #ff1a3c;
+      color: #ff1a3c;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #ff1a3c;
+      color: white;
+      box-shadow: 0 0 20px #ff1a3c;
+      transform: translateY(-3px);
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ff1a3c;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #ff1a3c;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,0,60,0.45), transparent 70%);
+      filter: blur(140px);
+      z-index: -1;
+      animation: swirl 10s infinite ease-in-out alternate;
+    }
+
+    @keyframes swirl {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(200px,200px) scale(1.2); }
+    }
+
+    .particles span {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 0, 60, 0.8);
+      border-radius: 50%;
+      animation: float 6s linear infinite;
+      filter: blur(2px);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .contact-link {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      display: inline-block;
+      text-shadow: 0 0 6px rgba(255, 0, 70, 0.6);
+    }
+
+    .contact-link span {
+      color: #fff;
+    }
+
+    .contact-link:hover {
+      color: #ff1a3c;
+      transform: translateX(5px);
+      text-shadow: 0 0 12px rgba(255, 0, 70, 1);
+    }
+
+    .projects-showcase {
+      padding: 100px 0;
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #5a4d00;
-      margin-top: 50px;
+      background: #000;
+      color: #fff;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .text-box {
-        width: 95%;
-      }
+    .section-title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ff004c;
+      text-shadow: 0 0 15px #ff004c;
+    }
+
+    .section-sub {
+      margin-bottom: 50px;
+      opacity: 0.9;
+      color: #fff;
+    }
+
+    .proj-flex {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .proj-box {
+      position: relative;
+      width: 460px;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.4s;
+      border: none; 
+      box-shadow: none;
+    }
+
+    .proj-box img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .proj-box:hover img {
+      transform: scale(1.12);
+      filter: brightness(1.2);
+    }
+
+    .proj-box:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 76, 0.6);
+    }
+
+    .proj-label {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 0, 76, 0.85);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+
+    .proj-box:hover .proj-label {
+      transform: translateX(-50%) translateY(-5px);
+      box-shadow: 0 0 15px #ff004c;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Hello, I'm Rhianne Gabriel</h2>
-    <p>3rd Year IT Student | PUP Sto. Tomas Campus</p>
-  </section>
+<div class="particles">
+  <span style="left:5%; animation-delay:0s;"></span>
+  <span style="left:20%; animation-delay:1s;"></span>
+  <span style="left:40%; animation-delay:2s;"></span>
+  <span style="left:60%; animation-delay:0.5s;"></span>
+  <span style="left:80%; animation-delay:1.5s;"></span>
+  <span style="left:90%; animation-delay:2.5s;"></span>
+</div>
 
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="text-box">
-        <h3>About Me</h3>
-        <p>
-          I'm Rhianne Gabriel, 20 years of age, currently studying Information Technology. I love creating user-friendly websites and learning new tools to improve my coding and design skills.
-        </p>
-      </div>
+<header>
+  <h1>RG's Matrix</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</header>
 
-      <div class="text-box">
-        <h3>Skills</h3>
-        <p>
-        • HTML, CSS, JavaScript <br>
-        • Basic Python Programming <br>
-        • UI/UX Design (Figma, Canva) <br>
-        • Team Collaboration & Communication <br>
-        • Project Coordination & Time Management <br>
-        • Creative Direction and Problem-Solving
-        </p>
-      </div>
+<section class="hero" id="home">
+  <div class="hero-left">
+    <img src="profile.jpeg" alt="Profile Photo">
+  </div>
 
-      <div class="text-box">
-        <h3>Education</h3>
-        <p>
-          Bachelor of Science in Information Technology <br>
-          Polytechnic University of the Philippines - Sto. Tomas Campus
-        </p>
-      </div>
-
-      <div class="text-box">
-        <h3>Projects</h3>
-        <p>
-          Tutoring Management System <br>
-          Batangas Travel App Website
-        </p>
-      </div>
-
-      <div class="text-box">
-        <h3>Contact Information</h3>
-        <p>
-          <!-- Replace with your own contact details -->
-          📧 rhiannegabriel2@gmail.com <br>
-          📱 0927 706 5841
-        </p>
-      </div>
+  <div class="hero-right">
+    <h4>HELLO, I'M</h4>
+    <h1>Rhianne Gabriel</h1>
+    <p>Frontend Developer & UI/UX Enthusiast <br> Crafting modern, interactive, immersive experiences.</p></div>
+    <div class="cta">
+      <a href="#projects"><button class="btn btn-primary">View Projects</button></a>
+      <a href="#contact"><button class="btn btn-outline">Get in Touch</button></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer id="contact">
-    <p>© 2025 Rhianne Gabriel | All Rights Reserved</p>
-  </footer>
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p style="max-width: 850px; font-size: 18px; line-height: 1.8; color: #d8d8d8; text-align: center;">
+    Hi! I’m Rhianne — a passionate Frontend Developer, creative problem-solver, and design-driven tech student.
+    I love transforming ideas into intuitive, visually compelling digital experiences through clean code and
+    thoughtful UI design. 
+    <br><br>
+    With hands-on experience in school organizations and real projects, I enjoy working at the intersection
+    of creativity and technology — whether I’m building user-friendly web interfaces, crafting multimedia
+    content, or collaborating with teams to bring innovative concepts to life.
+    <br><br>
+    I’m always exploring new tools, learning new skills, and pushing myself to grow in both tech and design —
+    because for me, innovation starts with curiosity and relentless improvement.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+
+  <div style="
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  ">
+    
+<div style="text-align: center;">
+  <h3 style="color: #ff003c; margin-bottom: 20px; font-size: 24px;">Web Development</h3>
+
+  <div style="
+    display: flex; 
+    flex-direction: column; 
+    gap: 32px;
+    align-items: center;
+    font-size: 24px;
+  ">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="html.png" width="70"/>
+      <span style="color: #f0f0f0;">HTML</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="css.png" width="70"/>
+      <span style="color: #f0f0f0;">CSS</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="js.png" width="70"/>
+      <span style="color: #f0f0f0;">JavaScript</span>
+    </div>
+  </div>
+</div>
+
+    <div style="text-align: center;">
+      <h3 style="color: #ff003c; margin-bottom: 20px; font-size: 24px;">Creative & Media</h3>
+
+      <ul style="
+        list-style: none; 
+        padding: 0; 
+        color: #f0f0f0;
+        font-size: 22px;
+        line-height: 2.2;
+      ">
+        <li>Photo Editing</li>
+        <li>Video Editing</li>
+        <li>Graphic Design</li>
+        <li>Social Media Content Creation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects-showcase">
+  <h2 class="section-title">My Projects</h2>
+  <p class="section-sub">Hover & click to explore</p>
+
+  <div class="proj-flex">
+    <a href="device-showcase.html" class="proj-box">
+      <img src="game.png" alt="Device Showcase">
+      <span class="proj-label">Device Showcase</span>
+    </a>
+
+    <a href="dream-destination.html" class="proj-box">
+      <img src="dream.png" alt="Dream Destination">
+      <span class="proj-label">Dream Destination</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Get in Touch</h2>
+  <p style="margin-bottom: 25px; max-width: 500px;">
+    Let's collaborate! Feel free to message me anytime.
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; font-size: 18px;">
+    <a href="mailto:magpantayrhianne@gmail.com" class="contact-link">📧 Email: <span>magpantayrhianne@gmail.com</span></a>
+    <a href="https://www.facebook.com/spearb.comv" target="_blank" class="contact-link">🌐 Facebook: <span>facebook.com/spearb.comv</span></a>
+    <a href="https://linkedin.com/in/" target="_blank" class="contact-link">💼 LinkedIn: <span>linkedin.com/in/yourprofile</span></a>
+  </div>
+</section>
+
 </body>
 </html>
 
